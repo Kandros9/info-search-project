@@ -1,6 +1,6 @@
 # Info search semester project, ITIS 2021
 
-Student: Evelina Ravilova, ITIS
+Student: Evelina Ravilova
 
 ## Features
 
