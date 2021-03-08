@@ -35,9 +35,14 @@ Student: Evelina Ravilova
     
 6. To use Crawler run the script:
     ```
-    python main.py <MAX_PAGES_NUM> <WIKI_SECTION>
+    python src\main.py <MAX_PAGES_NUM> <WIKI_SECTION>
     ```
     Default: `python main.py 100 Astronomy`
+    
+7. To use Boolean search run the script:
+    ```
+    python src\boolean_search.py <QUERY>
+    ```
 
 ## Techologies
  - Python
