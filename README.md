@@ -9,6 +9,13 @@ Student: Evelina Ravilova
   
 ##### Preprocessing
   Tokenize and lemmatize the content of HTML pages (branch `feature/preprocessing`)
+  
+##### Boolean search
+  Create inverted index and use boolean search (branch `feature/inverted-index__boolean-search`)
+  Query example:
+  ```
+    fortune OR fortify AND NOT forteana
+  ```
 
 ## Running the project
 1. Install `python 3` and `virtualenv` (if not)
