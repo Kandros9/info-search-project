@@ -30,10 +30,11 @@ Student: Evelina Ravilova
     pip install -r requirements.txt
     ```
     
-6. Run the script:
+6. To use Crawler run the script:
     ```
-    python main.py <MAX_PAGES_NUM>
+    python main.py <MAX_PAGES_NUM> <WIKI_SECTION>
     ```
+    Default: `python main.py 100 Astronomy`
 
 ## Techologies
  - Python
