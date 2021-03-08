@@ -11,7 +11,7 @@ Student: Evelina Ravilova
   Tokenize and lemmatize the content of HTML pages (branch `feature/preprocessing`)
   
 ##### Boolean search
-  Create inverted index and use boolean search (branch `feature/inverted-index__boolean-search`)
+  Create inverted index and use boolean search (branch `feature/inverted-index__boolean-search`)\
   Query example:
   ```
     fortune OR fortify AND NOT forteana
@@ -54,3 +54,4 @@ Student: Evelina Ravilova
 ## Techologies
  - Python
  - BeautifulSoup4
+ - NLTK
