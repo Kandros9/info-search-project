@@ -5,7 +5,10 @@ Student: Evelina Ravilova
 ## Features
 
 ##### Web crawler
-  Get pages from Wikipedia articles
+  Get pages from Wikipedia articles (branch `feature/web-crawler`)
+  
+##### Preprocessing
+  Tokenize and lemmatize the content of HTML pages (branch `feature/preprocessing`)
 
 ## Running the project
 1. Install `python 3` and `virtualenv` (if not)
@@ -30,10 +33,11 @@ Student: Evelina Ravilova
     pip install -r requirements.txt
     ```
     
-6. Run the script:
+6. To use Crawler run the script:
     ```
-    python main.py <MAX_PAGES_NUM>
+    python main.py <MAX_PAGES_NUM> <WIKI_SECTION>
     ```
+    Default: `python main.py 100 Astronomy`
 
 ## Techologies
  - Python

@@ -24,7 +24,7 @@ def dump_page(doc_num, url):
 def get_doc_num(page_num):
     return str(page_num).zfill(3)
 
-
+  
 def get_pages(url, max_pages=100):
     html_doc = requests.get(url)
     soup = BeautifulSoup(html_doc.text, "html.parser")
