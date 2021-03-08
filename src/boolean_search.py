@@ -1,11 +1,15 @@
 import re
+from sys import argv
+import os
+
+QUERY = argv[1] if len(argv) > 1 else ''
 
 inverted_index = {}
 
 
 def read_inverted_index():
     print("Reading inverted index...")
-    with open('../data/inverted_terms.txt', 'r', encoding='utf-8') as file:
+    with open(os.getcwd() + '/data/inverted_terms.txt', 'r', encoding='utf-8') as file:
         lines = file.readlines()
         for line in lines:
             ws = line.split(':')
@@ -58,4 +62,4 @@ def boolean_search(query):
 
 if __name__ == "__main__":
     read_inverted_index()
-    print(boolean_search("fortune OR fortify AND NOT forteana"))
+    print(boolean_search(QUERY))
