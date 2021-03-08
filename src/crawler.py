@@ -21,6 +21,10 @@ def dump_page(doc_num, url):
     time.sleep(5)
 
 
+def get_doc_num(page_num):
+    return str(page_num).zfill(3)
+
+  
 def get_pages(url, max_pages=100):
     html_doc = requests.get(url)
     soup = BeautifulSoup(html_doc.text, "html.parser")
@@ -30,7 +34,7 @@ def get_pages(url, max_pages=100):
         for link in soup.find_all('a'):
             if accept_link(link):
                 url = DOMAIN + link['href']
-                doc_num = str(page_num).zfill(3)
+                doc_num = get_doc_num(page_num)
                 dump_page(doc_num, url)
                 file.write('%s:%s\n' % (doc_num, url))
                 page_num += 1
@@ -41,8 +45,7 @@ def get_pages(url, max_pages=100):
 
 
 def read_doc(page_num):
-    doc_num = str(page_num).zfill(3)
-    with open('pages/' + doc_num + '.html', 'r', encoding='utf-8') as dump_file:
+    with open('../pages/' + get_doc_num(page_num) + '.html', 'r', encoding='utf-8') as dump_file:
         soup_dump = BeautifulSoup(dump_file.read(), "html.parser")
     return soup_dump
 

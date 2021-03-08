@@ -53,7 +53,7 @@ def tokenize(texts):
 
 def write_tokens(token_list):
     print("Writing to tokens.txt...")
-    with open('data/tokens.txt', 'w', encoding='utf-8') as file:
+    with open('../data/tokens.txt', 'w', encoding='utf-8') as file:
         file.writelines('\n'.join(token_list))
 
 
@@ -81,15 +81,33 @@ def lemmatize(words):
     return lemmas
 
 
+def lemmatize_with_frequency(words):
+    print("Lemmatization...")
+    lemmatizer = nltk.WordNetLemmatizer()
+    lemmas = dict()
+    lemmas_frequency = dict()
+    for word in words:
+        lemma = lemmatizer.lemmatize(word, get_wordnet_pos(word))
+        if lemma in lemmas:
+            if word not in lemmas[lemma] and word != lemma:
+                lemmas[lemma].append(word)
+                lemmas_frequency[lemma] += 1
+        else:
+            lemmas[lemma] = [word] if word != lemma else []
+            lemmas_frequency[lemma] = 1
+    return lemmas, lemmas_frequency
+
+
 def write_lemmas(lemma_list):
     print("Writing to lemmas.txt...")
-    with open('data/lemmas.txt', 'w', encoding='utf-8') as file:
+    with open('../data/lemmas.txt', 'w', encoding='utf-8') as file:
         for key in lemma_list:
             file.write(key + ' ' + ' '.join(lemma_list[key]) + '\n')
 
 
-num_files = get_num_files('./pages')
-tokens = tokenize(get_texts())
-write_tokens(tokens)
-lemmas = lemmatize(tokens)
-write_lemmas(lemmas)
+if __name__ == "__main__":
+    num_files = get_num_files('../pages')
+    tokens = tokenize(get_texts())
+    write_tokens(tokens)
+    lemmas = lemmatize(tokens)
+    write_lemmas(lemmas)
