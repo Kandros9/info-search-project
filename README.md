@@ -16,6 +16,10 @@ Student: Evelina Ravilova
   ```
     fortune OR fortify AND NOT forteana
   ```
+  
+##### TF-IDF
+  Calculate TF, IDF and TF_IDF (branch `feature/tf-idf`)
+
 
 ## Running the project
 1. Install `python 3` and `virtualenv` (if not)
