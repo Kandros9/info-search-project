@@ -1,5 +1,5 @@
 from src.crawler import get_doc_text, read_doc, get_doc_num
-from src.preprocessing import get_num_files, tokenize, lemmatize, lemmatize_with_frequency
+from src.preprocessing import get_num_files, tokenize, lemmatize_with_frequency
 from collections import OrderedDict
 
 terms = {}
